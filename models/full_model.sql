@@ -1,5 +1,5 @@
 MODEL (
-  name sqlmesh_example.full_model,
+  name tcloud_hybrid_demo.full_model,
   kind FULL,
   cron '@daily',
   grain item_id,
@@ -10,6 +10,6 @@ SELECT
   item_id,
   COUNT(DISTINCT id) AS num_orders,
 FROM
-  sqlmesh_example.incremental_model
+  tcloud_hybrid_demo.incremental_model
 GROUP BY item_id
   
