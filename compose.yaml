@@ -11,19 +11,20 @@ services:
       TCLOUD_CLIENT_SECRET: ${TCLOUD_CLIENT_SECRET}
 
       # SQLMesh configuration
-      SQLMESH__DEFAULT_GATEWAY: ${DEFAULT_GATEWAY:-GATEWAY_A}
+      SQLMESH__DEFAULT_GATEWAY: ${DEFAULT_GATEWAY:-TCLOUD_GATEWAY}
 
       # Example database configuration for BigQuery (adjust for your database)
       # All database parameters below should be customized for your specific setup
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__TYPE: ${DB_TYPE:-bigquery}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__METHOD: ${DB_METHOD}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__CONCURRENT_TASKS: ${DB_CONCURRENT_TASKS}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__REGISTER_COMMENTS: ${DB_REGISTER_COMMENTS}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__KEYFILE: ${DB_KEYFILE}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__PROJECT: ${DB_PROJECT}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__TYPE: ${DB_TYPE:-bigquery}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__METHOD: ${DB_METHOD}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__CONCURRENT_TASKS: ${DB_CONCURRENT_TASKS}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__REGISTER_COMMENTS: ${DB_REGISTER_COMMENTS}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__KEYFILE: /app/service-account.json # TODO: update this for your specific file name
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__PROJECT: ${DB_PROJECT}
     volumes:
       # Optional volume for persistent storage if needed
       - apply-executor-data:/app/data
+      - ./service-account.json:/app/service-account.json:ro
     deploy:
       resources:
         limits:
@@ -45,19 +46,20 @@ services:
       TCLOUD_CLIENT_SECRET: ${TCLOUD_CLIENT_SECRET}
 
       # SQLMesh configuration
-      SQLMESH__DEFAULT_GATEWAY: ${DEFAULT_GATEWAY:-GATEWAY_A}
+      SQLMESH__DEFAULT_GATEWAY: ${DEFAULT_GATEWAY:-TCLOUD_GATEWAY}
 
       # Example database configuration for BigQuery (adjust for your database)
       # All database parameters below should be customized for your specific setup
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__TYPE: ${DB_TYPE:-bigquery}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__METHOD: ${DB_METHOD}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__CONCURRENT_TASKS: ${DB_CONCURRENT_TASKS}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__REGISTER_COMMENTS: ${DB_REGISTER_COMMENTS}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__KEYFILE_JSON: ${DB_KEYFILE_JSON}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__PROJECT: ${DB_PROJECT}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__TYPE: ${DB_TYPE:-bigquery}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__METHOD: ${DB_METHOD}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__CONCURRENT_TASKS: ${DB_CONCURRENT_TASKS}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__REGISTER_COMMENTS: ${DB_REGISTER_COMMENTS}
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__KEYFILE: /app/service-account.json # TODO: update this for your specific file name
+      SQLMESH__GATEWAYS__TCLOUD_GATEWAY__CONNECTION__PROJECT: ${DB_PROJECT}
     volumes:
       # Optional volume for persistent storage if needed
       - run-executor-data:/app/data
+      - ./service-account.json:/app/service-account.json:ro
     deploy:
       resources:
         limits:

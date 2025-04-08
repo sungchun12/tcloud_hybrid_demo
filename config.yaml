@@ -1,12 +1,12 @@
 # this configuration will look similar to the native Tobiko Cloud scheduler 
 # but will leverage your hybrid runners instead of Tobiko Cloud's compute
 gateways:
-  gateway_a:
+  tcloud_gateway:
     scheduler:
       type: cloud
       default_catalog: sqlmesh-public-demo
 
-default_gateway: gateway_a
+default_gateway: tcloud_gateway
 
 model_defaults:
   dialect: bigquery

@@ -1,7 +1,7 @@
 projects:
     public-demo: # TODO: update this for the project name in the URL
         url: https://cloud.tobikodata.com/sqlmesh/tobiko/hybrid-public-demo/ # TODO: update for your unique URL
-        gateway: gateway_a
+        gateway: tcloud_gateway
         extras: bigquery,web,github  # TODO: update bigquery for your data warehouse
 default_project: public-demo # TODO: update this for the project name in the URL
 
