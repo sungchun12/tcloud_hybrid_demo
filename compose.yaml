@@ -1,7 +1,6 @@
-version: '3.8'
-
 services:
   apply-executor:
+    platform: linux/amd64
     image: tobikodata/tcloud:latest
     command: executor apply
     restart: unless-stopped
@@ -20,7 +19,7 @@ services:
       SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__METHOD: ${DB_METHOD}
       SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__CONCURRENT_TASKS: ${DB_CONCURRENT_TASKS}
       SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__REGISTER_COMMENTS: ${DB_REGISTER_COMMENTS}
-      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__KEYFILE_JSON: ${DB_KEYFILE_JSON}
+      SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__KEYFILE: ${DB_KEYFILE}
       SQLMESH__GATEWAYS__GATEWAY_A__CONNECTION__PROJECT: ${DB_PROJECT}
     volumes:
       # Optional volume for persistent storage if needed
@@ -35,6 +34,7 @@ services:
           cpus: ${APPLY_CPU_REQUEST:-1}
 
   run-executor:
+    platform: linux/amd64
     image: tobikodata/tcloud:latest
     command: executor run
     restart: unless-stopped

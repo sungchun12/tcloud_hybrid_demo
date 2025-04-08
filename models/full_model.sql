@@ -12,4 +12,3 @@ SELECT
 FROM
   tcloud_hybrid_demo.incremental_model
 GROUP BY item_id
-  

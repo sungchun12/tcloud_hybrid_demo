@@ -1,7 +1,7 @@
 test_example_full_model:
-  model: sqlmesh_example.full_model
+  model: tcloud_hybrid_demo.full_model
   inputs:
-    sqlmesh_example.incremental_model:
+    tcloud_hybrid_demo.incremental_model:
       rows:
       - id: 1
         item_id: 1

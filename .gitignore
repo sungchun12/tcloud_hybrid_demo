@@ -1,3 +1,5 @@
 /.cache
 /.venv
 .env
+service-account.json
+logs/*

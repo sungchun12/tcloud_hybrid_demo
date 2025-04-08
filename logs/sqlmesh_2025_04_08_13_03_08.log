@@ -1,3 +1,0 @@
-2025-04-08 13:03:08,341 - MainThread - sqlmesh.core.config.connection - INFO - Creating new DuckDB adapter for in-memory database (connection.py:318)
-2025-04-08 13:03:08,665 - MainThread - httpx - INFO - HTTP Request: GET https://cloud.tobikodata.com/sqlmesh/tobiko/hybrid-public-demo/api/state-sync/enterprise-version "HTTP/1.1 200 OK" (_client.py:1025)
-2025-04-08 13:03:08,666 - MainThread - root - INFO - Shutting down the event dispatcher (dispatcher.py:159)

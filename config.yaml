@@ -1,3 +1,11 @@
+# this configuration will look similar to the native Tobiko Cloud scheduler 
+# but will leverage your hybrid runners instead of Tobiko Cloud's compute
+gateways:
+  gateway_a:
+    scheduler:
+      type: cloud
+      default_catalog: sqlmesh-public-demo
+
 default_gateway: gateway_a
 
 model_defaults:
