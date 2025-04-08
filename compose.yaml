@@ -1,6 +1,6 @@
 services:
   apply-executor:
-    platform: linux/amd64
+    platform: linux/amd64 # This is needed if running on a Mac M chip laptops
     image: tobikodata/tcloud:latest
     command: executor apply
     restart: unless-stopped
@@ -35,7 +35,7 @@ services:
           cpus: ${APPLY_CPU_REQUEST:-1}
 
   run-executor:
-    platform: linux/amd64
+    platform: linux/amd64 # This is needed if running on a Mac M chip laptops
     image: tobikodata/tcloud:latest
     command: executor run
     restart: unless-stopped
